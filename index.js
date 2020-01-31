@@ -126,7 +126,7 @@ class Instructor extends Lambdasian {
 
       this.specialty = attributes.specialty,
       this.favLanguage = attributes.favLanguage,
-      this.catchPhrase = this.catchPhrase
+      this.catchPhrase = attributes.catchPhrase
     } 
     demo(subject){
       return `Today we are learning about ${subject}`
@@ -164,10 +164,10 @@ class Student extends Instructor {
     return `Loving ${this.favSubjects}!`
   }
   PRAssignment(subject) {
-      return `student.name has submitted a PR for ${subject}`
+      return `${this.name} has submitted a PR for ${subject}`
   }
   sprintChallenge(subject) {
-    return `${student.name} has begun sprint challenge on ${subject}`
+    return `${this.name} has begun sprint challenge on ${subject}`
   }
 }
 
@@ -189,10 +189,13 @@ class ProjectManager extends Instructor {
    super(attributes);
 
    this.gradClassName = attributes.gradClassName,
-   this.favInstructor = attributes.favInstructor,
+   this.favInstructor = attributes.favInstructor
  }
  standUp(channel) {
   return `${this.name} announces to ${channel}, @channel standy times!`
+ }
+ debugsCode(Student,subject) {
+   return `${this.name} debugs ${Student.name}'s code on ${subject}`
  }
 }
 
